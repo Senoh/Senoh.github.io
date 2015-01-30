@@ -1,0 +1,25 @@
+{
+  "name": "Senoh.github.io",
+  "version": "1.0.0",
+  "description": "My site that will temporarily host a bunch of my projects",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-cli": "^0.1.13"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Senoh/Senoh.github.io"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Senoh/Senoh.github.io/issues"
+  },
+  "homepage": "https://github.com/Senoh/Senoh.github.io"
+}
