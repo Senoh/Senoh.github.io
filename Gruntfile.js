@@ -20,11 +20,27 @@ module.exports = function(grunt) {
       tasks: ['concat:css'],
     },
   },
-  });
+  uglify: {
+    js: {
+      files: {
+        'pageLoad/scripts.min.js': ['build/js/scripts.js']
+      }
+    }
+  },
+  cssmin: {
+  	css: {
+    	files: {
+      	'pageLoad/styles.min.css': ['build/css/styles.css']
+    	}
+  	}
+  }
+ });
 
 
   //Grunt Loads
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.registerTask('default', ['concat', 'watch']);
 };

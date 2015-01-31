@@ -68,3 +68,9 @@ body {
 	width: 45px;
 	background-image: url('img/menuImg.png');
 }
+
+#mnFooter {
+	width: 100%;
+	height: 100px;
+	background-color: #62AEF0;
+}
