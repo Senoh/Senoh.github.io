@@ -74,3 +74,39 @@ body {
 	height: 100px;
 	background-color: #62AEF0;
 }
+
+#bottomNav {
+	color: white;
+	font-size: 18px;
+	font-family: sans-serif;
+	text-decoration: none;
+	position: relative;
+	top: 5px;
+	left: 2px;
+	margin-left: 5px;
+}
+
+#bottomNav:hover {
+	font-weight: bold;
+}
+
+#AboutMe {
+
+}
+
+#Projects {
+	background-color: #DEDEDE;
+}
+
+#Games {
+
+}
+
+#FutureSection {
+	background-color: #DEDEDE;
+}
+
+.section {
+	margin-top: 1px;
+	margin-bottom: 1px;
+}
