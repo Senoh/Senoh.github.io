@@ -19,6 +19,14 @@ module.exports = function(grunt) {
       files: ['css/**/*.css'],
       tasks: ['concat:css'],
     },
+    uglify: {
+      files: ['build/js/*.js'],
+      tasks: ['uglify:js'],
+    },
+    cssmin: {
+      files: ['build/css/*.css'],
+      tasks: ['cssmin:css'],
+    }
   },
   uglify: {
     js: {
@@ -51,5 +59,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.registerTask('default', ['concat', 'uglify', 'watch']);
+  grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'watch']);
 };
