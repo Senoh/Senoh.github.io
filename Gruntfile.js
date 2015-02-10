@@ -26,6 +26,10 @@ module.exports = function(grunt) {
     cssmin: {
       files: ['build/css/*.css'],
       tasks: ['cssmin:css'],
+    },
+    jade: {
+      files: ['index.jade'],
+      tasks: ['jade'],
     }
   },
   uglify: {
@@ -50,6 +54,18 @@ module.exports = function(grunt) {
       }
     }
   },
+  jade: {
+  compile: {
+    options: {
+      data: {
+        debug: false
+      }
+    },
+    files: {
+      "index.html": ["index.jade",]
+    }
+  }
+}
  });
 
 
@@ -59,5 +75,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.registerTask('default', ['concat', 'uglify', 'cssmin', 'watch']);
+  grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.registerTask('default', ['jade', 'concat', 'uglify', 'cssmin', 'watch']);
 };
