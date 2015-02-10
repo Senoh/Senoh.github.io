@@ -30,7 +30,11 @@ module.exports = function(grunt) {
     jade: {
       files: ['index.jade'],
       tasks: ['jade'],
-    }
+    },
+    sass: {
+      files: ['sass/main.sass'],
+      tasks: ['sass'],
+    },
   },
   uglify: {
     js: {
@@ -55,17 +59,24 @@ module.exports = function(grunt) {
     }
   },
   jade: {
-  compile: {
-    options: {
-      data: {
-        debug: false
+    compile: {
+      options: {
+        files: {
+          "index.html": ["index.jade",]
+        }
       }
-    },
-    files: {
-      "index.html": ["index.jade",]
     }
-  }
-}
+  },
+  sass: {
+    dist: {
+      options: {
+        style: 'expanded'
+      },
+      files: {                      
+        'css/main.css': 'sass/main.sass'
+      }
+    }
+  },
  });
 
 
@@ -76,5 +87,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jade');
-  grunt.registerTask('default', ['jade', 'concat', 'uglify', 'cssmin', 'watch']);
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.registerTask('default', ['jade', 'sass', 'concat', 'uglify', 'cssmin', 'watch']);
 };
