@@ -2,51 +2,51 @@ module.exports = function(grunt) {
 	grunt.initConfig({
   concat: {
     js: {
-      src: ['js/project.js'],
-      dest: 'build/js/scripts.js',
+      src: ['assets/js/project.js'],
+      dest: 'assets/build/js/scripts.js',
     },
     css: {
-      src: ['css/main.css'],
-      dest: 'build/css/styles.css',
+      src: ['assets/css/main.css'],
+      dest: 'assets/build/css/styles.css',
     },
   },
   watch: {
     js: {
-      files: ['js/**/*.js'],
+      files: ['asstes/js/*.js'],
       tasks: ['concat:js'],
     },
     css: {
-      files: ['css/**/*.css'],
+      files: ['assets/css/*.css'],
       tasks: ['concat:css'],
     },
     uglify: {
-      files: ['build/js/*.js'],
+      files: ['assets/build/js/*.js'],
       tasks: ['uglify:js'],
     },
     cssmin: {
-      files: ['build/css/*.css'],
+      files: ['assets/build/css/*.css'],
       tasks: ['cssmin:css'],
     },
     jade: {
-      files: ['index.jade'],
+      files: ['assets/index.jade'],
       tasks: ['jade'],
     },
     sass: {
-      files: ['sass/main.sass'],
+      files: ['assets/sass/main.sass'],
       tasks: ['sass'],
     },
   },
   uglify: {
     js: {
       files: {
-        'pageLoad/scripts.min.js': ['build/js/scripts.js']
+        'assets/pageLoad/js/scripts.min.js': ['assets/build/js/scripts.js']
       }
     }
   },
   cssmin: {
   	css: {
     	files: {
-      	'pageLoad/styles.min.css': ['build/css/styles.css']
+      	'assets/pageLoad/styles.min.css': ['assets/build/css/styles.css']
     	}
   	}
   },
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
         }
       },
       files: {
-      "index.html": ["index.jade"]
+      "index.html": ["assets/index.jade"]
       }
     }
   },
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
         style: 'expanded'
       },
       files: {                      
-        'css/main.css': 'sass/main.sass'
+        'assets/css/main.css': 'assets/sass/main.sass'
       }
     }
   },
